@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class Dashboard extends JFrame implements ActionListener{
     JButton addPersonalDetails, updatePersonalDetails, viewPersonalDetails, deletePersonalDetails, checkPackages, bookPackage;
-    JButton viewPackage;
+    JButton viewPackage, destinations;
     Dashboard(){
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
         setBounds(0,0,1600,1000);
@@ -118,7 +118,7 @@ public class Dashboard extends JFrame implements ActionListener{
         viewBookedHotels.setFont(new Font("Tahoma", Font.PLAIN, 20));
         p2.add(viewBookedHotels);
 
-        JButton destinations = new JButton("Destinations");
+        destinations = new JButton("Destinations");
         destinations.setBounds(0,500,300,50);
         destinations.setBackground(new Color(0,0,102));
         destinations.setForeground(Color.WHITE);
@@ -183,6 +183,9 @@ public class Dashboard extends JFrame implements ActionListener{
         }
         else if(ae.getSource() == viewPackage){
             new viewPackage("username");
+        }
+        else if(ae.getSource() == destinations){
+            new destinations();
         }
     }
     public static void main(String...args){
